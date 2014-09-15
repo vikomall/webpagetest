@@ -134,19 +134,19 @@ resources:
                 $webRoot = '$env:systemdrive\inetpub\wwwroot\'
 
                 # Github Dependencies
-                $php_ini_url = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/php.ini"
-                $apache_conf_url = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/httpd.conf"
-                $driver_installer_cert_url = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/webpagetest/powershell/WPOFoundation.cer"
-                $wpt_locations_ini = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/locations.ini"
-                $wpt_settings_ini = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/settings.ini"
-                $wpt_feeds_inc = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/feeds.inc"
-                $wpt_urlBlast_ini = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/urlBlast.ini"
-                $wpt_wptdriver_ini = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/wptdriver.ini"
+                $php_ini_url = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/php.ini"
+                $apache_conf_url = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/httpd.conf"
+                $driver_installer_cert_url = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/WPOFoundation.cer"
+                $wpt_locations_ini = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/locations.ini"
+                $wpt_settings_ini = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/settings.ini"
+                $wpt_feeds_inc = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/feeds.inc"
+                $wpt_urlBlast_ini = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/urlBlast.ini"
+                $wpt_wptdriver_ini = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/wptdriver.ini"
 
                 # Scripts
-                $DefaultUserNameURL = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/DefaultUserName.ps1"
-                $FirstRebootURL = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/FirstReboot.ps1"
-                $AgentUpdaterURL = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/heat/files/Agent-Updater.ps1"
+                $DefaultUserNameURL = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/DefaultUserName.ps1"
+                $FirstRebootURL = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/FirstReboot.ps1"
+                $AgentUpdaterURL = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/Agent-Updater.ps1"
 
                 # Cloud Files Dependencies
                 $ffmeg_bin_url = "http://9cecab0681d23f5b71fb-642758a7a3ed7927f3ce8478e9844e11.r45.cf5.rackcdn.com/ffmpeg-20140829-git-4c92047-win32-static.zip"
