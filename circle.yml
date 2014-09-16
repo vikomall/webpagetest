@@ -3,8 +3,8 @@ machine:
     version: 2.7.8
 dependencies:
   override:
-  - pip install -r test-requirements.txt
   - pip install hot
+  - pip install -r test-requirements.txt
 test:
   override:
   - hot test
