@@ -2,3 +2,11 @@ test-cases:
 - name: Default Build Test # Deploy using all default options
   create:
     timeout: 40 # Deployment should complete in under 40 minutes
+  resource_tests:
+    tests:
+    - site_test:
+        script:
+          commands:
+            - command: "python test/script/webpagetest.py"
+              command_args:
+                - { get_output: server_ip }
