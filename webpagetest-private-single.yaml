@@ -13,12 +13,9 @@ parameter_groups:
 
 - label: WebPageTest Application Settings
   parameters:
+  - server_hostname
   - domain
   - wpt_username
-
-- label: rax-dev-params
-  parameters:
-  - server_hostname
 
 parameters:
 
