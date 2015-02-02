@@ -119,12 +119,12 @@ resources:
                 $wpt_zip_url =  "https://github.com/WPO-Foundation/webpagetest/releases/download/WebPagetest-2.15/webpagetest_2.15.zip"
                 $wpi_msi_url = "http://download.microsoft.com/download/C/F/F/CFF3A0B8-99D4-41A2-AE1A-496C08BEB904/WebPlatformInstaller_amd64_en-US.msi"
                 $vcpp_vc11_url = "http://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe"
-                $apache_bin_url = "http://www.apachelounge.com/download/VC11/binaries/httpd-2.4.10-win32-VC11.zip"
+                $apache_bin_url = "http://www.apachelounge.com/download/VC11/binaries/httpd-2.4.12-win32-VC11.zip"
                 $php_bin_url = "http://windows.php.net/downloads/releases/php-5.4.37-Win32-VC9-x86.zip"
                 $ffmeg_bin_file = "ffmpeg-20140829-git-4c92047-win32-static.zip"
                 $wpt_zip_file = "webpagetest_2.15.zip"
                 $wpi_msi_file = "WebPlatformInstaller_amd64_en-US.msi"
-                $apache_bin_file = "httpd-2.4.10-win32-VC11.zip"
+                $apache_bin_file = "httpd-2.4.12-win32-VC11.zip"
                 $php_bin_file = "php-5.4.35-Win32-VC9-x86.zip"
                 $php_apc_file = "PHP-5.4.8_APC-3.1.13_x86_vc9.zip"
                 $vcpp_vc11_file = "vcredist_x86.exe"
@@ -163,6 +163,7 @@ resources:
                     }
                     Write-Log "[$(Get-Date)] Downloading $filename"
                     $webclient = New-Object System.Net.WebClient;
+                    $webclient.Headers.Add("user-agent", "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")
                     $webclient.DownloadFile($url, $localpath + "\" + $filename)
                 }
                 function Unzip-File($fileName, $sourcePath, $destinationPath){
