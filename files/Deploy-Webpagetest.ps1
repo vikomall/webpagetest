@@ -27,29 +27,29 @@ Function Deploy-WebPagetest(){
     #region Variables
     $wpt_zip_url =  "https://github.com/WPO-Foundation/webpagetest/releases/download/WebPagetest-2.15/webpagetest_2.15.zip"
     $driver_installer_url = "http://9cecab0681d23f5b71fb-642758a7a3ed7927f3ce8478e9844e11.r45.cf5.rackcdn.com/mindinst.exe"
-    $driver_installer_cert_url = "https://github.com/Linuturk/webpagetest/raw/master/webpagetest/powershell/WPOFoundation.cer"
+    $driver_installer_cert_url = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/WPOFoundation.cer"
     $wpi_msi_url = "http://download.microsoft.com/download/C/F/F/CFF3A0B8-99D4-41A2-AE1A-496C08BEB904/WebPlatformInstaller_amd64_en-US.msi"
     $vcpp_vc11_url = "http://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe"
     $apache_bin_url = "http://www.apachelounge.com/download/VC11/binaries/httpd-2.4.12-win64-VC11.zip"
-    $php_bin_url = "http://windows.php.net/downloads/releases/php-5.4.32-Win32-VC9-x86.zip"
-    $apache_conf_url = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/httpd.conf"
-    $php_ini_url = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/php.ini"
+    $php_bin_url = "http://windows.php.net/downloads/releases/php-5.4.37-Win32-VC9-x86.zip"
+    $apache_conf_url = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/httpd.conf"
+    $php_ini_url = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/php.ini"
     $php_apc_url = "http://9cecab0681d23f5b71fb-642758a7a3ed7927f3ce8478e9844e11.r45.cf5.rackcdn.com/PHP-5.4.8_APC-3.1.13_x86_vc9.zip"
     $ffmeg_bin_url = "http://9cecab0681d23f5b71fb-642758a7a3ed7927f3ce8478e9844e11.r45.cf5.rackcdn.com/ffmpeg-20140829-git-4c92047-win32-static.zip"
     $ffmeg_bin_file = "ffmpeg-20140829-git-4c92047-win32-static.zip"
     $wpt_zip_file = "webpagetest_2.15.zip"
     $wpi_msi_file = "WebPlatformInstaller_amd64_en-US.msi"
     $apache_bin_file = "httpd-2.4.12-win64-VC11.zip"
-    $php_bin_file = "php-5.4.32-Win32-VC9-x86.zip"
+    $php_bin_file = "php-5.4.37-Win32-VC9-x86.zip"
     $php_apc_file = "PHP-5.4.8_APC-3.1.13_x86_vc9.zip"
     $vcpp_vc11_file = "vcredist_x86.exe"
     $webRoot = '$env:systemdrive\inetpub\wwwroot\'
 
-    $wpt_locations_ini = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/locations.ini"
-    $wpt_settings_ini = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/settings.ini"
-    $wpt_feeds_inc = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/feeds.inc"
-    $wpt_urlBlast_ini = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/urlBlast.ini"
-    $wpt_wptdriver_ini = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/wptdriver.ini"
+    $wpt_locations_ini = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/locations.ini"
+    $wpt_settings_ini = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/settings.ini"
+    $wpt_feeds_inc = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/feeds.inc"
+    $wpt_urlBlast_ini = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/urlBlast.ini"
+    $wpt_wptdriver_ini = "https://github.com/rackspace-orchestration-templates/webpagetest/raw/master/files/wptdriver.ini"
 
     $webRoot = "$env:systemdrive\inetpub\wwwroot\"
     $webFolder = $webRoot + $DomainName
@@ -280,7 +280,7 @@ Function Deploy-WebPagetest(){
         }
     }
     function Set-ScheduleDefaultUserName ($ThisHost, $User, $Password, $InstallDir) {
-            $DefaultUserNameURL = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/Set-AutoLogon.ps1"
+            $DefaultUserNameURL = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/DefaultUserName.ps1"
             Invoke-WebRequest $DefaultUserNameURL -OutFile "$InstallDir\DefaultUserName.ps1" *>> $Logfile
             Replace-String -filePath "$InstallDir\DefaultUserName.ps1" -stringToReplace "%%USERNAME%%" -replaceWith $User
             $A = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy Bypass -File $InstallDir\DefaultUserName.ps1"
@@ -291,7 +291,7 @@ Function Deploy-WebPagetest(){
     }
 
     function Set-AgentUpdaterScheduledTask ($ThisHost, $User, $InstallDir) {
-          $AgentUpdaterURL = "https://raw.githubusercontent.com/Linuturk/webpagetest/master/heat/Agent-Updater.ps1"
+          $AgentUpdaterURL = "https://raw.githubusercontent.com/rackspace-orchestration-templates/webpagetest/master/files/Agent-Updater.ps1"
           Invoke-WebRequest $AgentUpdaterURL -OutFile "$InstallDir\Agent-Updater.ps1"
           $A = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy Bypass -File $InstallDir\Agent-Updater.ps1"
           $T = New-ScheduledTaskTrigger -AtLogon -User $User
