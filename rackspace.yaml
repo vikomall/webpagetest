@@ -39,3 +39,4 @@ instructions: |
   #### Video Capture
   If you are having trouble with video capture, open the Advanced Settings
   section and ensure the Capture Video option is enabled.
+user-input-required: true
