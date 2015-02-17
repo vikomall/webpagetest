@@ -9,7 +9,8 @@ dependencies:
   - pip install git+https://github.com/JasonBoyles/bumper
 test:
   override:
-  - envshuffle hot test
+  - envshuffle hot test --ci-parallel:
+      parallel: true
 deployment:
   stable:
     branch: master
