@@ -5,8 +5,8 @@ application-version: latest
 flavor: Single Windows Server
 flavor-weight: 1
 reach-info:
-  icon-20x20: http://f0ce1bd5237f7c9bf2c5-e388a7f3aba385a925111b1fc6f680d4.r80.cf2.rackcdn.com/webpagetest-icon-20x20.png
-  tattoo: http://f0ce1bd5237f7c9bf2c5-e388a7f3aba385a925111b1fc6f680d4.r80.cf2.rackcdn.com/webpagetest-tattoo.png
+  icon-20x20: https://0b5294b243620310a700-e388a7f3aba385a925111b1fc6f680d4.ssl.cf2.rackcdn.com/webpagetest-icon-20x20.png
+  tattoo: https://0b5294b243620310a700-e388a7f3aba385a925111b1fc6f680d4.ssl.cf2.rackcdn.com/webpagetest-tattoo.png
 hidden_outputs:
   - admin_password
 abstract: |
