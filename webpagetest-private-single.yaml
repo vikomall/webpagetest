@@ -34,10 +34,10 @@ parameters:
       this deployment.
     type: string
     default: Windows Server 2012 R2
-    constraints:
-    - allowed_values:
-      - Windows Server 2012 R2
-      description: must be a supported OS
+    #constraints:
+    #- allowed_values:
+    #  - Windows Server 2012 R2
+    #  description: must be a supported OS
 
   flavor:
     label: Server Size
